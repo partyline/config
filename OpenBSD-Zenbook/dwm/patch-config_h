@@ -1,0 +1,79 @@
+2a3,4
+> #include<X11/XF86keysym.h>
+> 
+5c7
+< 	"terminus:size=8"
+---
+> 	"Dejavu Sans Mono:size=12"
+7,13c9,15
+< static const char dmenufont[]       = "terminus:size=8";
+< static const char normbordercolor[] = "#404040";
+< static const char normbgcolor[]     = "#202020";
+< static const char normfgcolor[]     = "#c0c0c0";
+< static const char selbordercolor[]  = "#8888ff";
+< static const char selbgcolor[]      = "#404040";
+< static const char selfgcolor[]      = "#f0f0f0";
+---
+> static const char dmenufont[]       = "Dejavu Sans Mono:size=12";
+> static const char normbordercolor[] = "#333333";
+> static const char normbgcolor[]     = "#1e1e1e";
+> static const char normfgcolor[]     = "#999999";
+> static const char selbordercolor[]  = "#ff5f00";
+> static const char selbgcolor[]      = "#2e2e2e";
+> static const char selfgcolor[]      = "#eeeeee";
+28,31c30,33
+< 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+< 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+< 	{ "Xonix",    NULL,       NULL,       0,            1,           -1 },
+< 	{ NULL,       NULL,       "glxgears", 0,            1,           -1 },
+---
+> 	{ "Firefox",  NULL,       NULL,       1 << 7,       0,           -1 },
+> 	{ "chromium-browser",NULL,NULL,       1 << 8,       0,           -1 },
+> 	{ "MPlayer",  NULL,       NULL,       1 << 7,       0,           -1 },
+> 	{ "Xmessage", NULL,       NULL,       ~0,           1,           -1 },
+35c37
+< static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+---
+> static const float mfact     = 0.6; /* factor of master area size [0.05..0.95] */
+41,43c43,45
+< 	{ "[]=",      tile },    /* first entry is default */
+< 	{ "><>",      NULL },    /* no layout function means floating behavior */
+< 	{ "[M]",      monocle },
+---
+> 	{ "T",      tile },    /* first entry is default */
+> 	{ "F",      NULL },    /* no layout function means floating behavior */
+> 	{ "M",      monocle },
+47c49
+< #define MODKEY Mod1Mask
+---
+> #define MODKEY Mod4Mask
+58,60c60,70
+< static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+< static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+< static const char *termcmd[]  = { "uxterm", NULL };
+---
+> static char dmenumon[2]            = "0"; /* component of dmenucmd, manipulated in spawn() */
+> static const char *dmenucmd[]      = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+> static const char *termcmd[]       = { "uxterm", NULL };
+> static const char *volmutecmd[]    = { "mixerctl -t outputs.master.mute", NULL };
+> static const char *volupcmd[]      = { "mixerctl", "outputs.master=+2",   NULL };
+> static const char *voldowncmd[]    = { "mixerctl", "outputs.master=-2",   NULL };
+> static const char *lumupcmd[]      = { "luminosity", "+0.1", NULL };
+> static const char *lumdowncmd[]    = { "luminosity", "-0.1", NULL };
+> static const char *touchpadcmd[]   = { "toggle-touchpad",    NULL };
+> static const char *screenshotcmd[] = { "screenshot",         NULL };
+> static const char *slockcmd[]      = { "slock",              NULL };
+65c75
+< 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+---
+> 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd  } },
+96a107,115
+> 	{ 0,              XF86XK_AudioMute,        spawn,          {.v = volmutecmd   } },
+> 	{ 0,              XF86XK_AudioLowerVolume, spawn,          {.v = voldowncmd   } },
+> 	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = volupcmd     } },
+> 	{ MODKEY,                      XK_F5,      spawn,          {.v = lumdowncmd   } },
+> 	{ MODKEY,                      XK_F6,      spawn,          {.v = lumupcmd     } },
+> 	{ MODKEY,                      XK_F9,      spawn,          {.v = touchpadcmd  } },
+> 	{ MODKEY,                      XK_Print,   spawn,          {.v = screenshotcmd} },
+> 	{ MODKEY,                      XK_s,       spawn,          {.v = slockcmd     } },
+> 
