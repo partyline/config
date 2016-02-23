@@ -1,0 +1,16 @@
+synclient VertScrollDelta=40
+synclient TapButton1=1
+synclient TapButton2=3
+synclient TapButton3=2
+synclient ClickFinger1=1
+synclient ClickFinger2=2
+synclient ClickFinger3=3
+synclient ClickPad=1
+synclient MiddleButtonAreaLeft=1213 
+synclient MiddleButtonAreaRight=1883 
+synclient RightButtonAreaLeft=1884   
+synclient RightButtonAreaRight=3100
+synclient RightButtonAreaTop=1550
+synclient RightButtonAreaBottom=2200
+synclient MiddleButtonAreaTop=1550
+synclient MiddleButtonAreaBottom=2200
