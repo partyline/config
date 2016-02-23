@@ -24,6 +24,19 @@ UI preferences (colors). This config file adds a bunch of functions to use/emula
 * __win + f5__: decrease luminosity
 * __win + f6__: increase luminosity
 * __win + printscr__: take a screenshot
+* __win + s__: lock the screen with `slock`
+
+Change the layout for some programs. Chromium will launch be on the 9th workspace. Xmessage
+is floating and visible on every workspace (used for alerts). The class can be found with
+`xprop(1)`.
+
+```
+/* class      instance    title       tags mask     isfloating   monitor */
+{ "Firefox",  NULL,       NULL,       1 << 7,       0,           -1 },
+{ "chromium-browser",NULL,NULL,       1 << 8,       0,           -1 },
+{ "MPlayer",  NULL,       NULL,       1 << 7,       0,           -1 },
+{ "Xmessage", NULL,       NULL,       ~0,           1,           -1 },
+```
 
 
 ## Scripts
