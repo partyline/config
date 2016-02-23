@@ -35,7 +35,7 @@ Just throw them in your `$HOME/bin`
 * `toggle-touchpad`: connects/disconnects the touchpad.
 * `screenshot`: takes a screenshot and saves it to the specified `Sdir`. Requires `import` from `ImageMagick`.
 
-## patch and recompile `dwm` on OpenBSD
+## Patch and recompile `dwm` on OpenBSD
 
 ```sh
 make -C /usr/ports/x11/dwm clean clean=packages
@@ -45,4 +45,17 @@ patch /usr/ports/pobj/dwm-6.1/dwm-6.1/dwm.c dwm-6.1-combined.diff
 make -C /usr/ports/x11/dwm rebuild
 make -C /usr/ports/x11/dwm reinstall
 make patch
+```
+
+## Status bar
+
+Add this to your `.xinitrc`:
+
+```
+while true
+do
+        xsetroot -name "`hwinfo` | `date +"%a %e %b %H:%M"`"
+        sleep 30
+done &
+exec dwm
 ```
