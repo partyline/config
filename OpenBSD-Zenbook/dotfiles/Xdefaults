@@ -1,0 +1,188 @@
+*font: -adobe-courier-medium-r-normal-*-18-*-*-*-*-*-iso8859-15
+
+!
+! ---- Xft settings ----
+!
+
+Xft.dpi                       : 96
+Xft.antialias                 : true
+Xft.rgba                      : rgb
+Xft.autohint                  : false
+Xft.hinting                   : true
+Xft.hintstyle                 : hintmedium
+Xft.lcdfilter                 : lcddefault
+
+!
+! ---- UXTerm settings ----
+!
+ 
+UXTerm*faceName                : Dejavu Sans Mono
+UXTerm*faceNameDoublesize      : Dejavu Sans Mono
+UXTerm*faceSize                : 12
+UXTerm*locale                  : true
+UXTerm*utf8Title               : true
+UXTerm*eightBitInput           : true
+UXTerm*scrollBar               : false
+
+!foreground                    : x255 Grey93
+!background                    : x233 Grey3
+!cursor                        : x202 OrangeRed1
+UXTerm*foreground              : #eeeeee
+UXTerm*background              : #121212
+UXTerm*cursorColor             : #ff5f00
+
+!black.normal                  : x232 Grey3
+!black.bright                  : x242 Grey42
+UXTerm*color0                  : #080808 
+UXTerm*color8                  : #6c6c6c
+
+!red.normal                    : x167 IndianRed
+!red.bright                    : x209 Salmon1
+UXTerm*color1                  : #d75f5f
+UXTerm*color9                  : #ff875f
+
+!green.normal                  : x047 SpringGreen3
+!green.bright                  : x085 SeaGreen1
+UXTerm*color2                  : #00af5f
+UXTerm*color10                 : #5fffaf
+
+!yellow.normal                 : x166 DarkOrange3
+!yellow.bright                 : x228 Khaki1
+UXTerm*color3                  : #d75f00
+UXTerm*color11                 : #ffff87
+
+!blue.normal                   : x039 DeepSkyBlue1
+!blue.bright                   : x045 Turquoise2
+!UXTerm*color4                  : #00afff
+UXTerm*color4                  : #0087af
+UXTerm*color12                 : #00d7ff
+
+!magenta.normal                : x207 MediumOrchid1
+!magenta.bright                : x219 Plum1
+UXTerm*color5                  : #ff5fff
+UXTerm*color13                 : #ffafff
+
+!cyan.normal                   : x087 DarkSlateGray2
+!cyan.bright                   : x159 PaleTurquoise1
+UXTerm*color6                  : #5fffff
+UXTerm*color14                 : #afffff
+
+!white.normal                  : x255 Grey93
+!white.bright                  : x015 White
+UXTerm*color7                  : #eeeeee
+UXTerm*color15                 : #ffffff
+
+UXTerm*fastScroll              : true
+UXTerm*jumpScroll              : true
+UXTerm*multiScroll             : true
+UXTerm*cursorBlink             : true
+UXTerm*saveLines               : 8000
+!*selectToClipboard            : true
+
+! ---- shift select to copy to clipboard
+UXTerm*VT100.Translations      : #override \n\
+ Shift<Btn1Down>               : select-start() \n\
+ Shift<Btn1Motion>             : select-extend() \n\
+ Shift<Btn1Up>                 : select-end(CLIPBOARD) \n\
+ Shift<Btn2Up>                 : insert-selection(CLIPBOARD) \n\
+
+! ---- allow selecting email/url by double click
+UXTerm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:48
+
+! ---- emacs meta key 
+UXTerm*metaSendsEscape         : true
+!UXTerm*eightBitInput           : false
+
+!
+! ---- XTerm settings ----
+!
+ 
+XTerm*faceName                : Dejavu Sans Mono
+XTerm*faceNameDoublesize      : Dejavu Sans Mono
+XTerm*faceSize                : 12
+XTerm*locale                  : true
+XTerm*utf8Title               : true
+XTerm*eightBitInput           : true
+XTerm*scrollBar               : false
+
+!foreground                    : x255 Grey93
+!background                    : x233 Grey3
+!cursor                        : x202 OrangeRed1
+XTerm*foreground              : #eeeeee
+XTerm*background              : #121212
+XTerm*cursorColor             : #ff5f00
+
+!black.normal                  : x232 Grey3
+!black.bright                  : x242 Grey42
+XTerm*color0                  : #080808 
+XTerm*color8                  : #6c6c6c
+
+!red.normal                    : x167 IndianRed
+!red.bright                    : x209 Salmon1
+XTerm*color1                  : #d75f5f
+XTerm*color9                  : #ff875f
+
+!green.normal                  : x047 SpringGreen3
+!green.bright                  : x085 SeaGreen1
+XTerm*color2                  : #00af5f
+XTerm*color10                 : #5fffaf
+
+!yellow.normal                 : x166 DarkOrange3
+!yellow.bright                 : x228 Khaki1
+XTerm*color3                  : #d75f00
+XTerm*color11                 : #ffff87
+
+!blue.normal                   : x039 DeepSkyBlue1
+!blue.bright                   : x045 Turquoise2
+XTerm*color4                  : #0087af
+XTerm*color12                 : #00d7ff
+
+!magenta.normal                : x207 MediumOrchid1
+!magenta.bright                : x219 Plum1
+XTerm*color5                  : #ff5fff
+XTerm*color13                 : #ffafff
+
+!cyan.normal                   : x087 DarkSlateGray2
+!cyan.bright                   : x159 PaleTurquoise1
+XTerm*color6                  : #5fffff
+XTerm*color14                 : #afffff
+
+!white.normal                  : x255 Grey93
+!white.bright                  : x015 White
+XTerm*color7                  : #eeeeee
+XTerm*color15                 : #ffffff
+
+XTerm*fastScroll              : true
+XTerm*jumpScroll              : true
+XTerm*multiScroll             : true
+XTerm*cursorBlink             : true
+XTerm*saveLines               : 8000
+!*selectToClipboard            : true
+
+! ---- shift select to copy to clipboard
+XTerm*VT100.Translations      : #override \n\
+ Shift<Btn1Down>               : select-start() \n\
+ Shift<Btn1Motion>             : select-extend() \n\
+ Shift<Btn1Up>                 : select-end(CLIPBOARD) \n\
+ Shift<Btn2Up>                 : insert-selection(CLIPBOARD) \n\
+
+! ---- allow selecting email/url by double click
+XTerm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:48
+
+! ---- emacs meta key 
+XTerm*metaSendsEscape         : true
+!XTerm*eightBitInput           : false
+
+!
+! ---- Xmessage ----
+!
+
+Xmessage.center                : true
+Xmessage*foreground            : #eeeeee
+Xmessage*background            : #121212
+Xmessage*Text.?.cursorColor    : #cccccc
+Xmessage*form.okay.shapeStyle  : rectangle
+Xmessage*form.okay.background  : #444444
+xmessage*Scrollbar.width       : 10
+xmessage*Scrollbar.borderWidth : 1
+

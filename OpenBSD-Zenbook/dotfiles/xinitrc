@@ -1,0 +1,27 @@
+#!/bin/sh
+xsetroot -solid black &
+
+# keyboard settings
+xset r rate 400 90 &
+setxkbmap -layout "us" -variant "altgr-intl" -option "shift:both_capslock" &
+xmodmap .Xmodmap &
+
+# touchpad settings
+sh .touchpad-settings &
+
+# fonts
+xset +fp /usr/local/share/fonts/terminus/ &
+xset +fp /usr/local/share/fonts/Droid/ &
+
+# lock the screen, `startx` should be aliased to `startx & lock -pn`
+# or it's useless
+xautolock -time 20 -locker slock &
+uxterm &
+
+# status: hardware info and date
+while true
+do
+	xsetroot -name "`hwinfo` | `date +"%a %e %b %H:%M"`"
+	sleep 30
+done &
+exec dwm

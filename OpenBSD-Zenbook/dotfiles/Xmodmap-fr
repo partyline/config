@@ -1,0 +1,38 @@
+! Modification of keyboard variant "altgr-intl", set by `xsetkb -layout us -variant altgr-intl`
+! This variant is a pinky-saver when typing long french texts.
+! The Capslock key becomes a convenient sticky altgr which is
+! used to type french accents.
+! Pressing both Shift keys is Capslock, this is set by `xsetkbd -option "shift:both_capslock"`
+
+! Turn Capslock into sticky Altgr 
+clear lock
+keycode 66 = ISO_Level3_Latch NoSymbol ISO_Level3_Latch
+
+! Both Alt keys are regular Alt and send Meta
+keycode 64 = Alt_L Meta_L Alt_L Meta_L
+keycode 113 = Alt_R Meta_R Alt_R Meta_R
+
+! French diacritics
+keycode 24 = q Q q Q ediaeresis Ediaeresis ediaeresis Ediaeresis  
+keycode 25 = w W w W ecircumflex Ecircumflex ecircumflex Ecircumflex
+keycode 26 = e E e E eacute Eacute eacute Eacute
+keycode 27 = r R r R egrave Egrave egrave Egrave
+
+keycode 29 = y Y y Y ucircumflex Ucircumflex ucircumflex Ucircumflex
+keycode 30 = u U u U ugrave Ugrave ugrave Ugrave
+keycode 43 = h H h H udiaeresis Udiaeresis udiaeresis Udiaeresis
+
+keycode 31 = i I i I icircumflex Icircumflex icircumflex Icircumflex
+keycode 44 = j J j J idiaeresis Idiaeresis idiaeresis Idiaeresis
+
+keycode 32 = o O o O ocircumflex Ocircumflex ocircumflex Ocircumflex
+keycode 33 = p P p P odiaeresis Odiaeresis odiaeresis Odiaeresis
+
+keycode 38 = a A a A agrave Agrave agrave Agrave
+keycode 39 = s S s S acircumflex Acircumflex acircumflex Acircumflex
+keycode 40 = d D d D adiaeresis Adiaeresis adiaeresis Adiaeresis
+
+! Misc (altgr-"8" for degree, altgr-"-" for emdash)
+keycode 16 = 7 ampersand 7 ampersand onehalf threequarters
+keycode 17 = 8 asterisk 8 asterisk degree dead_abovering degree dead_abovering
+keycode 20 = minus underscore minus underscore emdash endash emdash endash
