@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# take a screenshot and save it to `dir`, ImageMagick must be installed
+# alternatives to IM: scrot, xwd(1)...
+
+dir="/home/david/files/images/screenshots"
+import -window root ${dir}/screenshot_`date "+%Y-%m-%dT%H:%M:%S"`.jpg 
+

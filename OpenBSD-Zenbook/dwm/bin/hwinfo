@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# this script displays the cpu frequency, temperature and the battery level
+# when battery charge is below the warning charge, an alert is displayed with Xmessage
+
+# battery info
+max=`   sysctl -n hw.sensors.acpibat0.watthour0 | cut -f 1 -d " "`
+rem=`   sysctl -n hw.sensors.acpibat0.watthour3 | cut -f 1 -d " "`
+warn=`  sysctl -n hw.sensors.acpibat0.watthour1 | cut -f 1 -d " "`
+status=`sysctl -n hw.sensors.acpibat0.raw0      | cut -f 1 -d " "`
+
+charge=`bc -l -e "scale=0; $rem * 100 / $max" -e "quit"` 
+
+# cpu frequency
+freq=`sysctl -n hw.cpuspeed`
+
+# cpu temperatures
+temp=`sysctl -n hw.sensors.cpu0.temp0 | cut -f1 -d "."`
+printf "CPU: ${freq}MHz | temp: $temp°C | Battery: ${charge}%%"
+[ $status = "2" ] && printf " ⌁" # add electric symbol when charging
+
+# battery alert
+[ `bc -e "$rem < $warn" -e quit` -eq 1 ] && xmessage "Battery low!
+Please connect charger."

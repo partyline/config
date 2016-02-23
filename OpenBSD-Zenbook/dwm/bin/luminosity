@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# use xrandr to modify the screen luminosity
+# this is a software modification, xbacklight(1) is not working atm
+
+value=`xrandr --verbose | grep Brightness | cut -f2 -d " "`
+newvalue=`bc -l -e "scale=1;
+                    n = $value $1;
+                    if (n < 0) {n = 0 };
+                    if (n > 1) { n = 1 };
+                    print n" -e "quit"`
+
+xrandr --output eDP-0 --brightness $newvalue

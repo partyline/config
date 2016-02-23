@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# connect/disconnect the touchpad
+
+state=`synclient | grep TouchpadOff`
+state=`echo $state | cut -f3 -d " "`
+newstate=`bc -e "!$state" -e "quit"`
+synclient TouchpadOff=$newstate
