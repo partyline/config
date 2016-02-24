@@ -26,8 +26,8 @@ UI preferences (colors). This config file adds a bunch of functions to use/emula
 * __win + printscr__: take a screenshot
 * __win + s__: lock the screen with `slock`
 
-Change the layout for some programs. Chromium will launch be on the 9th workspace. Xmessage
-is floating and visible on every workspace (used for alerts). The class can be found with
+Change the layout for some programs. Chromium will launch on the 9th workspace. `xmessage(1)`
+is floating and visible on every workspace (useful for alerts). The class can be found with
 `xprop(1)`.
 
 ```
